@@ -118,9 +118,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "chef_client" do |chef|
      chef.chef_server_url = "https://api.opscode.com/organizations/pepetogames"
      chef.validation_key_path = "pepetogames-validator.pem"
+    # chef.validation_key =  "pepetogames-validator.pem"
+     chef.validation_client_name = "pepetogames-validator"
      chef.add_role "dev"
-     chef.delete_node = true
-     chef.delete_client = true
+     chef.delete_node = "true"
+     chef.delete_client = "true"
   end
   
 end
