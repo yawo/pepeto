@@ -120,6 +120,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      chef.validation_key_path = "pepetogames-validator.pem"
     # chef.validation_key =  "pepetogames-validator.pem"
      chef.validation_client_name = "pepetogames-validator"
+     chef.node_name = config.vm.hostname
      chef.add_role "dev"
      chef.delete_node = "true"
      chef.delete_client = "true"
