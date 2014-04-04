@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "phusion/ubuntu-12.04-amd64"
-
+  config.vm.hostname = `hostname`.strip  #"dev-001"
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   config.vm.box_url = "https://vagrantcloud.com/phusion/ubuntu-12.04-amd64/version/1/provider/virtualbox.box"
