@@ -21,7 +21,7 @@ Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.co
 
 **To activate Komodo**: Disconnect your PC from internet,Install Setup, click Keygen.
 
-*All others tools will be in the [vagrant Virtual box](https://bitbucket.org/kpotufe_guillaume/pepeto-games/wiki/Vagrant%20box%20config)
+*All others tools will be in the [vagrant Virtual box](https://github.com/yawo/pepeto/wiki/Vagrant-box-content)
  and synchronized accross all the team.*
 
 ### Configuring the tools
