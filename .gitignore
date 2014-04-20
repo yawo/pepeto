@@ -1,0 +1,8 @@
+code/node_modules/
+code/node_modules/*
+code/node_modules/.bin
+code/bower_components/
+code/*.log
+
+code/build/
+code/dist/
