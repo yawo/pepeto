@@ -6,3 +6,5 @@ code/*.log
 
 code/build/
 code/dist/
+.vagrant
+
