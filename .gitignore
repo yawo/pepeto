@@ -7,5 +7,5 @@ code/*.log
 code/build/
 code/dist/
 .vagrant
-code/log
-code/.tmp
+code/log/*
+code/.tmp/*
