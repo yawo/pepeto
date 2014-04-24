@@ -6,6 +6,7 @@ code/*.log
 
 code/build/
 code/dist/
-.vagrant
+.vagrant/
+.vagrant/*
 code/log/*
 code/.tmp/*
