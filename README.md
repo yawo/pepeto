@@ -35,22 +35,28 @@ Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.co
 5. Create the Environment folder (where files and vagrant will be). **$PEPETO_HOME** will refer to this folder
 ```
 $ cd $PEPETO_HOME
-$ git clone https://kpotufe_guillaume@bitbucket.org/kpotufe_guillaume/pepeto-games.git
-$ cd pepeto-games
+$ git clone https://git@github.com/yawo/pepeto.git
+$ cd pepeto
 $ vagrant up
+$ vagrant ssh
+$ ln -s /vagrant/code code 
+$ cd code
+$ npm install
+$ npm rebuild
 ```
 
 ### Develop
-Development will start soon. Stay tuned.
+To start developping, open the folder *code* in your favorite editor on your computer. 
+To start the server (localhost:3000) in developper mode, execute ```grunt``` in the *code* folder.
 To destroy the vagrant vm, just do 'vagrant destroy'.
 
 ### Test 
 We will use Karma for tests. more on this soon.
 
 ### Deploy
-Deployment will be on Heroku or donpepeto.com. All team will decide.
+Deployment will be on Heroku.
 
-### Update Bitbucket
+### Update Github usually
 We will Scrum ! Let's get issues, tasks and wiki up to date.
 
 ## Contributors
