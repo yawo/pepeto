@@ -7,7 +7,7 @@ Games can be played at [games.donpepeto.com](http://games.donpepeto.com/).
 For fun, for algorithmic, for javascript learning, for Open source !
 
 ## Want to contribute ?
-Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.com/pub/yawo-kpotufe/4b/a91/571/ ) to add you to the projet bitbucket.
+Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.com/pub/yawo-kpotufe/4b/a91/571/ ) to add you to the projet collaborators here on github.
 
 ### Install environment tools
 
@@ -15,7 +15,7 @@ Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.co
 1. [Install](http://www.vagrantup.com/downloads)  Vagrant
 2. [Install](https://www.virtualbox.org/wiki/Downloads%20)  VirtualBox platform packages
 3. [Install](http://download.virtualbox.org/virtualbox/4.3.10/Oracle_VM_VirtualBox_Extension_Pack-4.3.10-9%203012.vbox-extpack)  VirtualBox Extension Pack    (double-click on the file)
-4. [Install](https://bitbucket.org/kpotufe_guillaume/pepeto-games/downloads/ActiveState.Komodo.IDE.v8.rar)  Komodo IDE (optional. Any other IDE may be used. **Cracking is not legal !**)
+4. [Install](https://bitbucket.org/kpotufe_guillaume/pepeto-games/downloads/ActiveState.Komodo.IDE.v8.rar)  Komodo IDE (optional. Webstorm or any other IDE may be used. **Cracking is not legal !**)
 5. [Install](https://code.google.com/p/msysgit/)  MsysGit (optional, for git on windows; install all binaries)
 6. [Install](https://www.google.com/intl/fr/chrome/browser/)  Chrome/Firefox (optional)
 
