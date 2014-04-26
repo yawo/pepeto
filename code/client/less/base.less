@@ -5,20 +5,38 @@
 html,
 body {
   height: 100%;
+  font-family: 'Raleway';
 }
-
+h1,h2,h3,h4,h5{
+  font-family: 'Roboto';
+}
+  
 body > .wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -@footer-height;
   padding: 0 0 @footer-height;
-
+  background-image: url("/img/bg2.jpg");
+ color: white;
   > .content {
     padding-top: @navbar-height;
   }
 }
 
+.header1{
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: 300;
+  color: white;
+  font-size: 45px;
+  background-color: rgba(20,20,20,0.3);
+  //width: 50%;
+  //padding: 8px;
+  border-radius: 7px;
+  margin-bottom: 3px; 
+}
+ 
 a {
   color: #000;
 }
@@ -61,4 +79,19 @@ code {
   width: 100%;
   height: 100%;
   z-index: 99;
+}
+.thumbnail {
+  background-color: rgba(19, 18, 18, 0.59);
+  .caption {
+    color: #FFFFFF;
+  }
+  .btn-primary {
+    background-color: rgba(66, 139, 202, 0.6);
+  }
+  .btn-success {
+    background-color: rgba(92, 184, 92, 0.66);
+  }
+  img,  a > img {
+    border-radius: 10px;
+  }
 }

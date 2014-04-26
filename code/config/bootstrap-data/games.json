@@ -1,0 +1,65 @@
+[{
+        "name": "puissance4",
+        "displayName": "Puissance 4",
+        "description": "Jeu de puissance 4",
+        "thumbnailUrl": "/img/game.thumbnail.puissance4.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "go",
+        "displayName": "Go ",
+        "description": "Jeu de Go",
+        "thumbnailUrl": "/img/game.thumbnail.go.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "_2048",
+        "displayName": "2048",
+        "description": "Jeu de 2048",
+        "thumbnailUrl": "/img/game.thumbnail._2048.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "dames",
+        "displayName": "Dames",
+        "description": "Jeu de Dames",
+        "thumbnailUrl": "/img/game.thumbnail.dames.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "echecs",
+        "displayName": "Echecs",
+        "description": "Jeu d'echecs",
+        "thumbnailUrl": "/img/game.thumbnail.echecs.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "tictactoe",
+        "displayName": "Tic Tac Toe",
+        "description": "Jeu de Tic Tac Toe",
+        "thumbnailUrl": "/img/game.thumbnail.tictactoe.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "domino",
+        "displayName": "Domino",
+        "description": "Jeu de Domino",
+        "thumbnailUrl": "/img/game.thumbnail.domino.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "scrabble",
+        "displayName": "Scrabble",
+        "description": "Jeu de Scrabble",
+        "thumbnailUrl": "/img/game.thumbnail.scrabble.png",
+        "help": "",
+        "popularity": 5
+    }, {
+        "name": "bookworm",
+        "displayName": "Bookworm",
+        "description": "Jeu de Bookworm",
+        "thumbnailUrl": "/img/game.thumbnail.bookworm.png",
+        "help": "",
+        "popularity": 5
+    }
+]

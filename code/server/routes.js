@@ -19,6 +19,7 @@ exports.register = function (app, restify) {
 
   // API
   restify.model('/api/features', 'Feature');
+  restify.model('/api/games', 'Game');
   restify.model('/api/users', 'User');
   restify.any  ('/api/login', c.api.auth.login, ['post']);
   restify.any  ('/api/logout', c.api.auth.logout, ['post']);
@@ -31,7 +32,7 @@ exports.register = function (app, restify) {
 
   // Home
   s.get('/', c.home.index);
-  s.get('/express', c.home.express);
+  s.get('/dashboard', c.home.dashboard);
   s.get('/page', c.home.page);
   s.get('/task', c.home.task);
 

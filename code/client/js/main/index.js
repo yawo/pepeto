@@ -24,8 +24,8 @@ ngModule.config(function ($stateProvider) {
         }
       },
       resolve: {
-        features: ['Restangular', function (Restangular) {
-          return Restangular.all('features').getList();
+        games: ['Restangular', function (Restangular) {
+          return Restangular.all('games').getList();
         }]
       }
     });

@@ -18,6 +18,7 @@ var ngModule = angular.module('app', [
   'restangular',
   'ui.bootstrap',
   'ui.router',
+  'ui.bootstrap',
   'app.shared',
   'app.layout',
   'app.account',
@@ -43,7 +44,7 @@ ngModule.config(function (RestangularProvider) {
 // Routes
 ngModule.config(function ($stateProvider, $urlRouterProvider, layoutProvider) {
   $stateProvider
-    .state('express', {
+    .state('dashboard', {
       url: '*path',
       views: layoutProvider.getViews(),
       onEnter: function () {

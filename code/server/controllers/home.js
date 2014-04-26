@@ -10,17 +10,17 @@ function index(req, res) {
   res.render('home/index');
 }
 
-function express(req, res) {
-  res.render('home/express', {
-    hello: 'Hello from express world!'
+function dashboard(req, res) {
+  res.render('home/dashboard', {
+    hello: 'Your history, options and statistics here'
   });
 }
 
 function page(req, res) {
   res.render('home/page', {
     layout: 'static',
-    documentTitle: 'Static Page',
-    navTitle: 'Static Layout'
+    documentTitle: 'About',
+    navTitle: 'About'
   });
 }
 
@@ -36,6 +36,6 @@ function task(req, res, next) {
 
 // Public API
 exports.index = index;
-exports.express = express;
+exports.dashboard = dashboard;
 exports.page = page;
 exports.task = task;

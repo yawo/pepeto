@@ -1,0 +1,1 @@
+json-minify /vagrant/code/config/bootstrap-data/games.json | mongoimport --db ultimate-seed --collection games --jsonArray
