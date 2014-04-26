@@ -7,7 +7,7 @@ Games can be played at [games.donpepeto.com](http://games.donpepeto.com/).
 For fun, for algorithmic, for javascript learning, for Open source !
 
 ## Want to contribute ?
-Just install your env and contact [Yawo Guillaume KPOTUFE](http://ma.linkedin.com/pub/yawo-kpotufe/4b/a91/571/ ) to add you to the projet collaborators here on github.
+Just install your env and contact [Yawo Guillaume KPOTUFE](ma.linkedin.com/pub/yawo-guillaume-kpotufe/4b/a91/571/) to add you to the projet collaborators here on github.
 
 ### Install environment tools
 
@@ -60,6 +60,6 @@ Deployment will be on Heroku.
 We will Scrum ! Let's get issues, tasks and wiki up to date.
 
 ## Contributors
-* [Yawo Guillaume KPOTUFE](http://ma.linkedin.com/pub/yawo-kpotufe/4b/a91/571/ )
+* [Yawo Guillaume KPOTUFE](ma.linkedin.com/pub/yawo-guillaume-kpotufe/4b/a91/571/)
 
 Have fun! any question ? mcguy2008 -NOSPAM- gmail
