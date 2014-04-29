@@ -4,6 +4,8 @@
  * https://github.com/theintern/intern/wiki/Configuring-Intern
  */
 
+// var requirejs = require("requirejs");
+// define = requirejs.define;
 define({
 
   proxyPort: 9000,

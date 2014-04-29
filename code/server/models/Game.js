@@ -3,24 +3,16 @@
  */
 
 'use strict';
-
-var util = require('util');
-
-var _ = require('lodash'),
-    bcrypt = require('bcrypt'),
-    ultimate = require('ultimate');
-
+var    ultimate = require('ultimate');
 var mongoose = ultimate.lib.mongoose,
-    plugin = ultimate.db.mongoose.plugin,
-    type = ultimate.db.mongoose.type;
+    plugin = ultimate.db.mongoose.plugin;
 
-var app = require('../app');
 
 // Schema
 var schema = new mongoose.Schema({
   name:         { type: String, required: true },
   description:  { type: String, required: true },
-  help:         String,      
+  help:         String,
   displayName:  { type: String, required: true },
   thumbnailUrl: { type: String, required: true},
   popularity:   Number
@@ -28,7 +20,7 @@ var schema = new mongoose.Schema({
 
 // Restify
 schema.restify = {
- 'list,get': '*',
+  'list,get': '*',
   'post,put,delete': {
     'admin': '*'
   }
