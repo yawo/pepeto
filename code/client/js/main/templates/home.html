@@ -5,13 +5,13 @@
         <div class="header1">Choose a <strong>game</strong></div>
         <div class="row">
           <div class="col-sm-6 col-md-4" tooltip="{{ item.description }}" ng-repeat="item in items" >
-            <div class="thumbnail">
-              <img src="{{ item.thumbnailUrl}}" alt="{{ item.displayName }}">
+            <div class="thumbnail {{ item.name }}" style="background-image: url(/img/game.thumbnail.{{ item.name }}.png)">
+              <!--img src="{{ item.thumbnailUrl}}" alt="{{ item.displayName }}"-->
               <div class="caption">
                 <h3>{{ item.displayName }}</h3> 
                 <p>{{ item.description }}</p>
                 <p><a href="#" class="btn btn-primary" role="button">Play now</a>
-                  <a href="#" class="btn btn-success" role="button">New game</a>
+                  <a href="#" class="btn btn-danger" role="button">New game</a>
                 </p>
               </div>
             </div>

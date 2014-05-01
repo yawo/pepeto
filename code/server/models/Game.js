@@ -15,7 +15,9 @@ var schema = new mongoose.Schema({
   help:         String,
   displayName:  { type: String, required: true },
   thumbnailUrl: { type: String, required: true},
-  popularity:   Number
+  popularity:   Number,
+  nowPlaying:   Number,
+  nowWaiting:   Number
 });
 
 // Restify
