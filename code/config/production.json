@@ -1,5 +1,6 @@
 {
-  "url": "http://www.donpepeto.com/games",
+  "title":"Pepeto games",
+  "url": "@@@@@",
   "api": {
     "aws": {
       "key": "@@@@@",
@@ -29,17 +30,17 @@
   },
   "db": {
     "mongo": {
-      "host": "127.0.0.1",
-      "port": 27017,
-      "username": null,
-      "password": null,
-      "db": "ultimate-seed"
+      "host": "oceanic.mongohq.com",
+      "port":10041 ,
+      "username": "syltech",
+      "password": "b85ee675f5438015db2da7c2e7d40a2b",
+      "db": "pepeto"
     },
     "redis": {
-      "host": "127.0.0.1",
-      "port": 6379,
-      "password": null,
-      "namespace": "ultimate-seed"
+      "host": "pub-redis-10294.us-east-1-4.2.ec2.garantiadata.com",
+      "port": 10294,
+      "password": "cocowawa",
+      "namespace": "pepeto"
     }
   },
   "log": {
