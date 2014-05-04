@@ -21,6 +21,17 @@ function error404(req, res) {
   ));
 }
 
+//Middlewares
+function newGameHandler(req,res,next){
+  if(req.method=='post'){
+    var game = req.params;
+    game.players = [req.user];
+  }
+  next();
+}
+
+
 // Public API
 exports.catchAll = catchAll;
 exports.error404 = error404;
+exports.newGameHandler = newGameHandler;

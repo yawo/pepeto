@@ -29,15 +29,15 @@ var ngModule = angular.module('app', [
 
 // Enable HTML5 Mode.
 ngModule.config(function ($locationProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true).hashPrefix('!');
 });
 
 // Set Restangular base URL.
 ngModule.config(function (RestangularProvider) {
   RestangularProvider
-    .setBaseUrl('/api')
+    .setBaseUrl('/api/v1')
     .setResponseExtractor(function (res) {
-      return res.result;
+      return res.result?res.result:res;
     });
 });
 

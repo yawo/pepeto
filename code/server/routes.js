@@ -7,29 +7,36 @@
 // var ultimate = require('ultimate');
 
 // Register controllers to routes.
+var restifyMongoose = require('express-restify-mongoose');
 exports.register = function (app, restify) {
   var c = app.controllers,
+      m = app.models,
+      l = app.lib.controller,
       s = app.servers.express.getServer(),
-      error404 = app.lib.controller.error404;
+      error404 = l.error404;
 
   // var ensureAdmin = ultimate.server.controller.ensureAdmin,
   //     ensureGuest = ultimate.server.controller.ensureGuest,
   //     ensureUser = ultimate.server.controller.ensureUser,
   //     csrf = ultimate.server.controller.csrf;
+  
+  //Mongoose API
+  restifyMongoose.serve(s,m.Play,{middleware:l.newGameHandler});
+  restifyMongoose.serve(s,m.Game);
 
   // API
-  restify.model('/api/features', 'Feature');
-  restify.model('/api/games', 'Game');
-  restify.model('/api/plays', 'Play');
-  restify.model('/api/users', 'User');
-  restify.any  ('/api/login', c.api.auth.login, ['post']);
-  restify.any  ('/api/logout', c.api.auth.logout, ['post']);
-  restify.any  ('/api/me', c.api.auth.me, ['list']);
-  restify.any  ('/api/register', c.api.auth.register, ['post']);
-  restify.any  ('/api/test/any', c.api.test, ['list', 'get']);
-  restify.user ('/api/test/user', c.api.test, ['list', 'get']);
-  restify.admin('/api/test/admin', c.api.test);
-  s.get(/^\/api(?:[\/#?].*)?$/, error404);
+  //restify.model('/api/v1/features', 'Feature');
+  //restify.model('/api/v1/games', 'Game');
+  //restify.model('/api/v1/plays', 'Play');
+  restify.model('/api/v1/users', 'User');
+  restify.any  ('/api/v1/login', c.api.auth.login, ['post']);
+  restify.any  ('/api/v1/logout', c.api.auth.logout, ['post']);
+  restify.any  ('/api/v1/me', c.api.auth.me, ['list']);
+  restify.any  ('/api/v1/register', c.api.auth.register, ['post']);
+  restify.any  ('/api/v1/test/any', c.api.test, ['list', 'get']);
+  restify.user ('/api/v1/test/user', c.api.test, ['list', 'get']);
+  restify.admin('/api/v1/test/admin', c.api.test);
+  s.get(/^\/api\/v1(?:[\/#?].*)?$/, error404);
 
   // Home
   s.get('/', c.home.index);

@@ -6,8 +6,8 @@
         "thumbnailUrl": "/img/game.thumbnail.puissance4.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "go",
@@ -16,8 +16,8 @@
         "thumbnailUrl": "/img/game.thumbnail.go.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "_2048",
@@ -26,8 +26,8 @@
         "thumbnailUrl": "/img/game.thumbnail._2048.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "dames",
@@ -36,8 +36,8 @@
         "thumbnailUrl": "/img/game.thumbnail.dames.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "echecs",
@@ -46,8 +46,8 @@
         "thumbnailUrl": "/img/game.thumbnail.echecs.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "tictactoe",
@@ -56,8 +56,8 @@
         "thumbnailUrl": "/img/game.thumbnail.tictactoe.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "domino",
@@ -66,8 +66,8 @@
         "thumbnailUrl": "/img/game.thumbnail.domino.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "scrabble",
@@ -76,8 +76,8 @@
         "thumbnailUrl": "/img/game.thumbnail.scrabble.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     },
     {
         "name": "bookworm",
@@ -86,7 +86,7 @@
         "thumbnailUrl": "/img/game.thumbnail.bookworm.png",
         "help": "",
         "popularity": 5,
-        "nowPlaying": 15,
-        "nowWaiting": 6
+        "nowPlaying": 0,
+        "nowWaiting": 0
     }
 ]

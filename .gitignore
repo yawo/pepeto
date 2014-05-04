@@ -10,3 +10,6 @@ code/dist/
 .vagrant/*
 code/log/*
 code/.tmp/*
+code/.cachebust
+code/.gitignore
+code/client-built/

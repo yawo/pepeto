@@ -8,11 +8,24 @@ var mongoose = ultimate.lib.mongoose,
   Schema = mongoose.Schema,
   plugin = ultimate.db.mongoose.plugin;
 
+var gameStates = {
+  WAITING: 1,
+  PLAYING: 2,
+  PAUSED: 3,
+  CANCELED: 4,
+  DRAWED: 5,
+  OVER: 6,
+  TIMEDOUT: 7,
+  BUGGY: 8,
+  OTHER: 9,
+  UNKNOWN: 10
+};
+
 
 // Schema
 var schema = new Schema({
   game: { type: Schema.Types.ObjectId, ref: 'Game' },
-  state: Number,
+  state: { type: Number, default: gameStates.WAITING }, 
   players: [
     { type: Schema.Types.ObjectId, ref: 'User' }
   ],
@@ -66,19 +79,7 @@ schema.plugin(plugin.timestamp);
  */
 
 //Statics
-schema.statics.states = {
-  WAITING: 1,
-  PLAYING: 2,
-  PAUSED: 3,
-  CANCELED: 4,
-  DRAWED: 5,
-  OVER: 6,
-  TIMEDOUT: 7,
-  BUGGY: 8,
-  OTHER: 9,
-  UNKNOWN: 10
-};
-
+schema.statics.states = gameStates;
 // Model
 var model = mongoose.model('Play', schema);
 

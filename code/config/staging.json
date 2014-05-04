@@ -1,18 +1,17 @@
 {
-  "title":"Pepeto games",
-  "url": "http://games.donpepeto.com",
+  "url": "http://@@@@@",
   "api": {
     "aws": {
       "key": "@@@@@",
       "secret": "@@@@@"
     },
     "facebook": {
-      "appId": "776528712372193",
-      "appSecret": "3dbfd0b8b543b361b3836da92a1c6112"
+      "appId": "@@@@@",
+      "appSecret": "@@@@@"
     },
     "google": {
-      "clientId": "889634304972-2ga9vqteskjcc2rdvqej29movtv2tkva.apps.googleusercontent.com",
-      "clientSecret": "b9tEGOYrPIBLPyxYVmD7AAFw"
+      "clientId": "@@@@@",
+      "clientSecret": "@@@@@"
     },
     "rackspace": {
       "username": "@@@@@",
@@ -30,17 +29,17 @@
   },
   "db": {
     "mongo": {
-      "host": "oceanic.mongohq.com",
-      "port":10041 ,
-      "username": "pepeto",
-      "password": "cocowawa",
-      "db": "pepeto"
+      "host": "@@@@@",
+      "port": 27017,
+      "username": null,
+      "password": null,
+      "db": "ultimate-seed"
     },
     "redis": {
-      "host": "pub-redis-10294.us-east-1-4.2.ec2.garantiadata.com",
-      "port": 10294,
-      "password": "cocowawa",
-      "namespace": "pepeto"
+      "host": "@@@@@",
+      "port": 6379,
+      "password": null,
+      "namespace": "ultimate-seed"
     }
   },
   "log": {
