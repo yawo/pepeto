@@ -11,7 +11,7 @@
                 <h3>{{ game.displayName }}</h3> 
                 <p>{{ game.nowWaiting }} open | {{game.nowPlaying}} ongoing.</p>
                 <p><a ui-sref="app.home.game({gameId: game._id})" class="btn btn-primary" role="button">Find a play</a>
-                  <a ui-sref="app.home.game.play({gameId: game._id, playId: 0})" class="btn btn-danger" role="button">New game</a>
+                  <a ui-sref="app.home.game.newplay({gameId: game._id })" class="btn btn-danger" role="button">New game</a>
                 </p>
               </div>
             </div>
