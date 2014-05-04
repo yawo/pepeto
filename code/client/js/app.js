@@ -29,7 +29,7 @@ var ngModule = angular.module('app', [
 
 // Enable HTML5 Mode.
 ngModule.config(function ($locationProvider) {
-  $locationProvider.html5Mode(true).hashPrefix('!');
+ // $locationProvider.html5Mode(true).hashPrefix('!');
 });
 
 // Set Restangular base URL.
