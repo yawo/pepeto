@@ -14,6 +14,6 @@ exports = module.exports = function (ngModule) {
     })
     .controller('PlayCtrl',function ($scope,play  ) {
       $scope.play = play;
-    });  
+    });
 
 };

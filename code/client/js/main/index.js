@@ -53,7 +53,7 @@ ngModule.config(function ($stateProvider) {
     },
     resolve:{
       play:['Restangular','$stateParams',function(Restangular,$stateParams){
-        if($stateParams.playId == 0){
+        if($stateParams.playId === 0){
           return Restangular.all('Plays').post({game:$stateParams.gameId});
         }else{
           return Restangular.one('Plays',$stateParams.playId).get();

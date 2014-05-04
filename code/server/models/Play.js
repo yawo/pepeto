@@ -25,7 +25,7 @@ var gameStates = {
 // Schema
 var schema = new Schema({
   game: { type: Schema.Types.ObjectId, ref: 'Game' },
-  state: { type: Number, default: gameStates.WAITING }, 
+  state: { type: Number, default: gameStates.WAITING },
   players: [
     { type: Schema.Types.ObjectId, ref: 'User' }
   ],
