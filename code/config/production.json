@@ -19,10 +19,10 @@
       "apiKey": "@@@@@"
     },
     "twitter": {
-      "accessToken": "@@@@@",
-      "accessTokenSecret": "@@@@@",
-      "consumerKey": "@@@@@",
-      "consumerSecret": "@@@@@"
+      "accessToken": "301400761-EjtaqUjumgJzkp47GMNSmetjVLG9De7clcwAcLm8",
+      "accessTokenSecret": "eU2VS03WZk1SsQ37PmCqAvWd81JhgG5EBmVETDki3nCGG",
+      "consumerKey": "UhVkuz19XNL6sKATrsX5aBswQ"
+      "consumerSecret": "MEt41X8lQjRzI2L71GxxFQiQLmLEazaJsap9jzKUU2TUptvgaj"
     }
   },
   "cookie": {
