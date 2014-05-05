@@ -1,4 +1,4 @@
 language: node_js
 node_js: 0.10
-before_install: "cd code; npm install -g grunt"
+before_install: "cd code"
 }
