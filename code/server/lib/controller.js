@@ -23,7 +23,7 @@ function error404(req, res) {
 
 //Middlewares
 function newGameHandler(req,res,next){
-  debugger;
+  //debugger;
   if(req.method === 'POST'){
     req.body.players = [req.isAuthenticated()?req.user.id:app.config.anonymousUserId];
     console.log(req.body);

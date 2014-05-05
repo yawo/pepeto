@@ -96,12 +96,12 @@ app.run = function () {
 
   //Create and/or set the anonymous user
   app.m.User.findOne({ 'email': 'anonymous@donpepeto.com' }, '_id', function (err, user) {
-    if (err) console.log(err);
+    if (err) {console.log(err);}
     if(!user){
       app.m.User.create( { 'email': 'anonymous@donpepeto.com',name:{first: 'Anonymous'} }, function (err2,user2){
-        if(err2)  console.log(err2);
-        if(user2) app.config.anonymousUserId = user2._id.toString();
-      });   
+        if(err2) { console.log(err2);}
+        if(user2) {app.config.anonymousUserId = user2._id.toString();}
+      });
     }else{
       app.config.anonymousUserId = user._id.toString();
     }
