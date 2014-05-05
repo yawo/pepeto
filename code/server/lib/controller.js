@@ -23,12 +23,15 @@ function error404(req, res) {
 
 //Middlewares
 function newGameHandler(req,res,next){
-  if(req.method === 'post'){
-    var game = req.params;
-    game.players = [req.user];
+  debugger;
+  if(req.method === 'POST'){
+    req.body.players = [req.isAuthenticated()?req.user.id:app.config.anonymousUserId];
+    console.log(req.body);
   }
   next();
 }
+
+
 
 
 // Public API

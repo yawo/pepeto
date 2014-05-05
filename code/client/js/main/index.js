@@ -7,7 +7,7 @@
 var angular = require('angular'),
     rhtml = require('rhtml');
 
-var ngModule = angular.module('app.main', []);
+var ngModule = angular.module('app.main', ['ngAnimate']);
 
 // Controllers
 require('./controllers/home')(ngModule);
@@ -39,7 +39,7 @@ ngModule.config(function ($stateProvider) {
     },
     resolve:{
       plays:['Restangular','$stateParams',function(Restangular,$stateParams){
-        return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'<4' });
+        return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'<=3',select:'_id,state,players' });
       }]
     }
   })

@@ -24,10 +24,10 @@
   <div id="spinner"></div>
   <div class="wrap">
     <nav id="nav" ui-view="nav"></nav>
-    <div class="content">
+    <div class="content view-animate-container">
       <div id="alert" ui-view="alert"></div>
       <div id="header" ui-view="header"></div>
-      <div id="main" ui-view class="slide">{{{body}}}</div>
+      <div id="main" ui-view class="view-animate ng-scope">{{{body}}}</div>
     </div>
   </div>
   <footer id="footer" ui-view="footer"></footer>

@@ -4,7 +4,7 @@
       <div class="games">
         <div class="header1">Choose a <strong>game</strong></div>
         <div class="row">
-          <div ng-repeat="game in games" class="col-sm-6 col-md-4" tooltip="{{ game.description }}" >
+          <div ng-repeat="game in games" class="col-sm-6 col-md-4 repeated-item"  tooltip="{{ game.description }}" >
             <div class="thumbnail {{ game.name }}" style="background-image: url(/img/game.thumbnail.{{ game.name }}.png)">
               <!--img src="{{ game.thumbnailUrl}}" alt="{{ game.displayName }}"-->
               <div class="caption">
