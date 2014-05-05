@@ -28,6 +28,19 @@ function _initConfig() {
   config = _.defaults(config, {
     test: $cookieStore.get('test'),
     title: 'Pepeto Games'
+    playStates:{
+      CREATED: 0,
+      WAITING: 1,
+      PLAYING: 2,
+      PAUSED: 3,
+      CANCELED: 4,
+      DRAWED: 5,
+      OVER: 6,
+      TIMEDOUT: 7,
+      BUGGY: 8,
+      OTHER: 9,
+      UNKNOWN: 10
+    }
   });
 
   // Convert config to scope.

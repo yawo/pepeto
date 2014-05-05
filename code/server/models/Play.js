@@ -8,7 +8,8 @@ var mongoose = ultimate.lib.mongoose,
   Schema = mongoose.Schema,
   plugin = ultimate.db.mongoose.plugin;
 
-var gameStates = {
+var playStates = {
+  CREATED: 0,
   WAITING: 1,
   PLAYING: 2,
   PAUSED: 3,
@@ -25,7 +26,7 @@ var gameStates = {
 // Schema
 var schema = new Schema({
   game: { type: Schema.Types.ObjectId, ref: 'Game' },
-  state: { type: Number, default: gameStates.WAITING },
+  state: { type: Number, default: playStates.CREATED },
   players: [
     { type: Schema.Types.ObjectId, ref: 'User' }
   ],
@@ -79,7 +80,7 @@ schema.plugin(plugin.timestamp);
  */
 
 //Statics
-schema.statics.states = gameStates;
+schema.statics.playStates = playStates;
 // Model
 var model = mongoose.model('Play', schema);
 
