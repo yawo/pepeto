@@ -117,7 +117,7 @@
     "postuninstall": "node npm-scripts postuninstall",
     "preupdate": "node npm-scripts preupdate",
     "postupdate": "node npm-scripts postupdate",
-    "start": "node server",
-    "test": "grunt test"
+    "start": "node server"
+    //,"test": "grunt test"
   }
 }
