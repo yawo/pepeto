@@ -27,7 +27,7 @@ function _initConfig() {
   // Config defaults.
   config = _.defaults(config, {
     test: $cookieStore.get('test'),
-    title: 'Pepeto Games'
+    title: 'Pepeto Games',
     playStates:{
       CREATED: 0,
       WAITING: 1,
