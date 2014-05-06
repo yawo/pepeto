@@ -1,6 +1,6 @@
 <section class="home">
   <div class="container">
-    <article class="content">      
+    <article class="content">
       <div class="games">
         <div class="header1">Choose a <strong>game</strong></div>
         <div class="row">
@@ -8,7 +8,7 @@
             <div class="thumbnail {{ game.name }}" style="background-image: url(/img/game.thumbnail.{{ game.name }}.png)">
               <!--img src="{{ game.thumbnailUrl}}" alt="{{ game.displayName }}"-->
               <div class="caption">
-                <h3>{{ game.displayName }}</h3> 
+                <h3>{{ game.displayName }}</h3>
                 <p>{{ game.nowWaiting }} open | {{game.nowPlaying}} ongoing.</p>
                 <p><a ui-sref="app.home.game({gameId: game._id})" class="btn btn-primary" role="button">Find a play</a>
                 <a ui-sref="app.home.game.newplay({gameId: game._id })" class="btn btn-danger" role="button">New game</a>
@@ -22,7 +22,7 @@
           <div class="col-md-4 col-sm-6">
             <center>
               <img src="/img/motto.png"/>
-              <h3>More Plays for more Peace!</h3>
+              <h4>More Plays for more Peace!</h4>
             </center>
             <hr/>
             <p>Aside from entertaining, <strong>Pepeto Games</strong> aim to help the world be a better place.
@@ -32,7 +32,7 @@
           <div class="col-md-4 col-sm-6">
             <center>
               <img src="/img/help.grow.png"/>
-              <h3>Help us grow</h3>
+              <h4>Help us grow</h4>
             </center>
             <hr/>
             <p>You can make a donation to help the team grow, improve the website, invest in SEO, pay hosting bills and so on. You may want to help in another way like providing new games and algorithms. Just let us know.
@@ -41,7 +41,7 @@
           <div class="col-md-4 col-sm-6">
             <center>
               <img src="/img/contribute.programmer.png"/>
-              <h3>Code with us</h3>
+              <h4>Code with us</h4>
             </center>
             <hr/>
             <p>We need code reviews, Artificial Intelligence for games engines, designers and lot of skilled mind.
@@ -50,6 +50,6 @@
           </div>
         </div>
       </div>
-    </article>   
+    </article>
   </div>
 </section>
