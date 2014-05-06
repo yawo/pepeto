@@ -39,7 +39,7 @@ ngModule.config(function ($stateProvider) {
     },
     resolve:{
       plays:['Restangular','$stateParams',function(Restangular,$stateParams){
-        return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'=1',select:'_id,state,players' });
+        return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'1',select:'_id,state,players' });
       }]
     }
   })
