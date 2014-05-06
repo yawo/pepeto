@@ -118,6 +118,5 @@
     "preupdate": "node npm-scripts preupdate",
     "postupdate": "node npm-scripts postupdate",
     "start": "node server"
-    //,"test": "grunt test"
   }
 }
