@@ -21,11 +21,16 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   grunt.loadNpmTasks('intern');
-
+  grunt.loadNpmTasks('grunt-watchify');
+  var watchify = require('watchify');
+    
   // Project configuration.
   grunt.initConfig({
     project: project,
     browserify2: {  // grunt-browserify2
+      options: {
+        watch: true
+      },
       dev: {
         entry: './<%= project.path.client %>/js/index.js',
         compile: '<%= project.path.temp %>/js/main.js',

@@ -25,7 +25,7 @@ var playStates = {
 
 // Schema
 var schema = new Schema({
-  game: { type: Schema.Types.ObjectId, ref: 'Game' },
+  game: { type: String, ref: 'Game' },
   state: { type: Number, default: playStates.CREATED },
   players: [
     { type: Schema.Types.ObjectId, ref: 'User' }

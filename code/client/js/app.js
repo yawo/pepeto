@@ -5,7 +5,7 @@
 'use strict';
 
 var _ = require('lodash'),
-    $ = require('jquery'),
+     $ = require('jquery'),
     angular = require('angular'),
     moment = require('moment'),
     socketio = require('socketio');
@@ -24,7 +24,8 @@ var ngModule = angular.module('app', [
   'app.account',
   'app.admin',
   'app.auth',
-  'app.main'
+  'app.main',
+  'app.games'
 ]);
 
 // Enable HTML5 Mode.

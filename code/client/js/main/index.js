@@ -5,6 +5,7 @@
 'use strict';
 
 var angular = require('angular'),
+//    minify 
     rhtml = require('rhtml');
 
 var ngModule = angular.module('app.main', ['ngAnimate']);
@@ -24,9 +25,10 @@ ngModule.config(function ($stateProvider) {
       }
     },
     resolve: {
-      games: ['Restangular', function (Restangular) {
-        return Restangular.all('Games').getList();
-      }]
+      restangulars: ['Restangular', function (Restangular) {
+        return {gameList: Restangular.all('Games').getList().$object, Plays: Restangular.all('Plays')};
+      }],
+     $state:"$state" 
     }
   })
   .state('app.home.game',{
@@ -40,36 +42,8 @@ ngModule.config(function ($stateProvider) {
     resolve:{
       plays:['Restangular','$stateParams',function(Restangular,$stateParams){
         return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'1',select:'_id,state,players' });
-      }]
+      }],
+     $stateParams:"$stateParams" 
     }
-  })
-  .state('app.home.game.play',{
-    url:'/plays/{playId}',
-    views:{
-      '@':{
-        controller:'PlayCtrl',
-        template: rhtml('./templates/play.html')
-      }
-    },
-    resolve:{
-      play:['Restangular','$stateParams',function(Restangular,$stateParams){
-        return Restangular.one('Plays',$stateParams.playId).get();
-      }]
-    }
-  })
-  .state('app.home.game.newplay',{
-    url:'/newplay',
-    views:{
-      '@':{
-        controller:'PlayCtrl',
-        template: rhtml('./templates/play.html')
-      }
-    },
-    resolve:{
-      play:['Restangular','$stateParams',function(Restangular,$stateParams){
-        return Restangular.all('Plays').post({game:$stateParams.gameId});
-      }]
-    }
-  })
-;
+  });
 });

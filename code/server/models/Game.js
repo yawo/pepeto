@@ -10,7 +10,7 @@ var mongoose = ultimate.lib.mongoose,
 
 // Schema
 var schema = new mongoose.Schema({
-  name:         { type: String, required: true },
+  _id:         { type: String, required: true },
   description:  { type: String, required: true },
   help:         String,
   displayName:  { type: String, required: true },
@@ -29,7 +29,7 @@ schema.restify = {
 };
 
 // Indexes
-schema.path('name').index({ unique: true });
+//schema.path('name').index({ unique: true });
 
 // Plugins
 schema.plugin(plugin.findOrCreate);

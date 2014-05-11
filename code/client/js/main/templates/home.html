@@ -5,13 +5,14 @@
         <div class="header1">Choose a <strong>game</strong></div>
         <div class="row">
           <div ng-repeat="game in games" class="col-sm-6 col-md-4 repeated-item"  tooltip="{{ game.description }}" >
-            <div class="thumbnail {{ game.name }}" style="background-image: url(/img/game.thumbnail.{{ game.name }}.png)">
+            <div class="thumbnail {{ game._id }}" style="background-image: url(/img/game.thumbnail.{{ game._id }}.png)">
               <!--img src="{{ game.thumbnailUrl}}" alt="{{ game.displayName }}"-->
               <div class="caption">
                 <h3>{{ game.displayName }}</h3>
                 <p>{{ game.nowWaiting }} open | {{game.nowPlaying}} ongoing.</p>
                 <p><a ui-sref="app.home.game({gameId: game._id})" class="btn btn-primary" role="button">Find a play</a>
-                <a ui-sref="app.home.game.newplay({gameId: game._id })" class="btn btn-danger" role="button">New game</a>
+                <!--a ui-sref="app.home.game.newplay({gameId: game._id })" class="btn btn-danger" role="button">New game</a-->
+                <button ng-click="newPlay(game._id)" class="btn btn-danger">New game</button>
                 </p>
               </div>
             </div>

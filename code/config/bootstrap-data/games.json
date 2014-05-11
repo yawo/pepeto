@@ -1,6 +1,6 @@
 [
     {
-        "name": "puissance4",
+        "_id": "puissance4",
         "displayName": "Puissance 4",
         "description": "Jeu de puissance 4",
         "thumbnailUrl": "/img/game.thumbnail.puissance4.png",
@@ -10,7 +10,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "go",
+        "_id": "go",
         "displayName": "Go ",
         "description": "Jeu de Go",
         "thumbnailUrl": "/img/game.thumbnail.go.png",
@@ -20,7 +20,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "_2048",
+        "_id": "_2048",
         "displayName": "2048",
         "description": "Jeu de 2048",
         "thumbnailUrl": "/img/game.thumbnail._2048.png",
@@ -30,7 +30,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "dames",
+        "_id": "dames",
         "displayName": "Dames",
         "description": "Jeu de Dames",
         "thumbnailUrl": "/img/game.thumbnail.dames.png",
@@ -40,7 +40,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "echecs",
+        "_id": "echecs",
         "displayName": "Echecs",
         "description": "Jeu d'echecs",
         "thumbnailUrl": "/img/game.thumbnail.echecs.png",
@@ -50,7 +50,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "tictactoe",
+        "_id": "tictactoe",
         "displayName": "Tic Tac Toe",
         "description": "Jeu de Tic Tac Toe",
         "thumbnailUrl": "/img/game.thumbnail.tictactoe.png",
@@ -60,7 +60,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "domino",
+        "_id": "domino",
         "displayName": "Domino",
         "description": "Jeu de Domino",
         "thumbnailUrl": "/img/game.thumbnail.domino.png",
@@ -70,7 +70,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "scrabble",
+        "_id": "scrabble",
         "displayName": "Scrabble",
         "description": "Jeu de Scrabble",
         "thumbnailUrl": "/img/game.thumbnail.scrabble.png",
@@ -80,7 +80,7 @@
         "nowWaiting": 0
     },
     {
-        "name": "bookworm",
+        "_id": "bookworm",
         "displayName": "Bookworm",
         "description": "Jeu de Bookworm",
         "thumbnailUrl": "/img/game.thumbnail.bookworm.png",

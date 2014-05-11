@@ -12,6 +12,7 @@ var config = {};
 
 function _initConfig() {
   var $cookieStore = _o.$cookieStore,
+      $cookies = _o.$cookies,
       $rootScope = _o.$rootScope;
 
   // Load global config.
@@ -48,15 +49,16 @@ function _initConfig() {
 
   // Update cookies on config change.
   config.$watch('test', function () {
-    $cookieStore.put('test', config.xxx);
+    $cookieStore.put('test','ultimate-seed-new');
   });
 }
 
 // Public API
 exports = module.exports = function (ngModule) {
-  ngModule.factory('app', function ($cookieStore, $rootScope) {
+  ngModule.factory('app', function ($cookieStore,$cookies, $rootScope) {
     _o = {
       $cookieStore: $cookieStore,
+      $cookies: $cookies,
       $rootScope: $rootScope
     };
 
