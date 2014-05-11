@@ -1,6 +1,6 @@
 # Welcome to Pepeto Games
 ===
-
+[![Build Status](https://travis-ci.org/yawo/pepeto.svg?branch=master)](https://travis-ci.org/yawo/pepeto)
 Games can be played at [games.donpepeto.com](http://games.donpepeto.com/).
 
 ## Why another game project ?
