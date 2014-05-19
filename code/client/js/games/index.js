@@ -47,7 +47,7 @@ ngModule.config( [          '$stateProvider', '$urlRouterProvider',
   .state('app.home.game.play',{
     url:'/plays/{playId}',
     views:{
-      'center': {
+      'board': {
         controllerProvider:  function($state){
           //console.log("$state.params.gameId",$state.params.gameId);
           return $state.params.gameId+'BoardCtrl';
@@ -90,8 +90,7 @@ ngModule.config( [          '$stateProvider', '$urlRouterProvider',
       } ,
       '':{
         template: ' '
-      }
-
+      } 
     },
     resolve:{
       play:['Restangular','$stateParams',function(Restangular,$stateParams){

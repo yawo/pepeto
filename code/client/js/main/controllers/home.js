@@ -6,7 +6,7 @@
 
 exports = module.exports = function (ngModule) {
   ngModule
-    .controller('HomeCtrl', function ($scope,$state, restangulars) {
+    .controller('HomeCtrl', function ($scope,$state,$rootScope, restangulars) {
       $scope.games = restangulars.gameList; 
       $scope.newPlay = function(gameId){
           $scope.gameId = gameId;
@@ -15,7 +15,7 @@ exports = module.exports = function (ngModule) {
         });
       };
     })
-    .controller('GameCtrl', function ($scope, $stateParams,  plays) {
+    .controller('GameCtrl', function ($scope, $rootScope, $stateParams,  plays) {
       $scope.plays = plays;
       $scope.gameId = $stateParams.gameId;
     });

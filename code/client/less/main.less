@@ -4,8 +4,8 @@
 
 #main {
   //padding-top: @main-vertical-padding;
-  padding-bottom: @main-vertical-padding + 15px;
-
+  padding-bottom: @main-vertical-padding ;
+  height:100%;
   .menu {
     .page-header {
       margin: 0 0 15px;
@@ -40,6 +40,7 @@
   }
 
   .content {
+    height:100%;
     h1,
     h2,
     h3 {
@@ -61,4 +62,85 @@
       text-align: center;
     }
   }
+}
+//Games
+
+.play-sidebar{
+  border-left:1px solid #e0e0e0;
+}
+
+.play-sidebar-block{
+  border-bottom:1px solid #e0e0e0;
+  padding:3px;
+}
+
+.full-height{
+  height:100%;
+}
+
+.relief{
+  font-size:1.5em;
+  font-family: Arial;
+  font-weight: 800;
+}
+.big-relief{
+  font-size: 4em;
+  font-family: Arial;
+  font-weight: 700;
+}
+
+#play{
+  font-size:0.87em;
+}
+
+
+#board{
+  //height:80%; 
+}
+
+#discussions{
+  //height:20%;
+}
+#discussions .dtable{
+  max-height:470px;
+  overflow-y: scroll;
+  overflow-x: overlay;
+}
+
+#discussions input[type=text]{
+  width:95%;
+  margin-top:3px;
+  margin-left:5px;
+}
+
+#gameHeader{
+  //height:40%;
+}
+#gameHeader td{
+  text-align: center;
+}
+#gameHeader img{
+  border-radius: 12px;
+}
+
+#gameHeader .progress {
+  height: 10px !important;
+}
+
+#gameHeader .progress-bar {
+  font-size:8px !important;
+  line-height:10px !important; 
+  font-family:verdana;
+}
+
+#info{
+  //height:20%;
+}
+
+#actions{
+//  height:10%;
+}
+
+#history{
+  //height:30%;
 }

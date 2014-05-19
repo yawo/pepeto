@@ -8,7 +8,7 @@ exports = module.exports = function (ngModule) {
   ngModule
     .controller('puissance4BoardCtrl', function ($scope,$rootScope,play) {
       $scope.message ="puissance4BoardCtrl here";
-      $rootScope.play = play;
+      //$rootScope.play = play;
     })
     .controller('puissance4InfoCtrl', function ($scope,play) {
       $scope.message ="puissance4InfoCtrl here";

@@ -1,0 +1,39 @@
+<div  id="gameHeader" class="play-sidebar-block">
+  <table width='100%'>
+    <tr>
+      <td width='50%'>
+        <img class="ng-hide" ng-hide='(currentPlayer === me)' src='{{players[1 - me].avatarUrl}}' width='90px' height='90px'/> 
+        <img class="ng-hide" ng-show='(currentPlayer === me)' src='{{players[me].avatarUrl}}' width='90px' height='90px'/> 
+        <br/>
+        {{players[currentPlayer].name}} (<span class="relief">{{players[currentPlayer].points}}</span>)
+        <a href="#"><span title="disable timer" class='glyphicon glyphicon-ban-circle'> </span></a>
+        <br/>
+        <timer id="play-countdown" interval="1000" countdown="120">
+        <div class="progress">
+          <div class="progress-bar progress-bar-{{ (countdown<(20*120/100))?'danger':((countdown<(40*120/100))?'warning':'info') }}" 
+            role="progressbar" aria-valuenow="{{((countdown*100)/120)}}" 
+            aria-valuemin="0" aria-valuemax="100" style="heigth:15px !important;width: {{((countdown*100)/120)}}%">
+            {{countdown}} <span class="sr-only">Play !</span>
+          </div>
+        </div>
+        </timer>
+      </td>
+      <td class=''>
+        <small>Bet on</small>: <span class="big-relief">{{bet}}</span>
+        <div>
+          <button class='btn-xs btn btn-primary'><span class='glyphicon glyphicon-chevron-up'> </span> Raise bet</button>
+          <button ng-click='startPausePlay()' ng-class='startBtnPauseClass[playing]'><span title='Pause' ng-class='startPauseClass[playing]'> </span> </button>
+          <button class='btn-xs btn btn-danger'><span title='Resign' class='glyphicon glyphicon-stop'> </span> </button>
+
+          <br/>
+          <!--small>Total play time </small> <br/-->
+          <span class="relief"><timer interval="1000">{{hours}}:{{minutes}}:{{seconds}} </timer></span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td></td>
+    </tr>
+  </table>
+</div>

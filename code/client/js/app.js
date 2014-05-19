@@ -19,6 +19,7 @@ var ngModule = angular.module('app', [
   'ui.bootstrap',
   'ui.router',
   'ui.bootstrap',
+  'timer',
   'app.shared',
   'app.layout',
   'app.account',

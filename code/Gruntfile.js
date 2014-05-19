@@ -28,9 +28,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     project: project,
     browserify2: {  // grunt-browserify2
-      options: {
-        watch: true
-      },
       dev: {
         entry: './<%= project.path.client %>/js/index.js',
         compile: '<%= project.path.temp %>/js/main.js',
@@ -434,8 +431,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serverDev', function () {
     grunt.task.run([
-      'express',
-      'open'
+      'express'
+     // ,'open'
     ]);
     if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging') {
       grunt.task.run('watch');

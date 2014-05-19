@@ -1,1 +1,18 @@
-Discussions here
+<div id='discussions'>
+  <div class="dtable">
+    <table class="table table-hover table-condensed">
+      <tbody>
+      <tr ng-repeat="talk in discussions">
+        <td class="col-md-1">
+          <strong>{{talk.author}}</strong>
+        </td>
+        <td>{{talk.message}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <form ng-submit="sendMessage()">
+    <input ng-model="message" type="text" placeholder="say something..." width="80%" />
+    <!--input type="submit" value="send" class="btn btn-primary btn-xs" /-->
+  </form>
+</div>
