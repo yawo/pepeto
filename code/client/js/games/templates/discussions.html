@@ -2,11 +2,11 @@
   <div class="dtable">
     <table class="table table-hover table-condensed">
       <tbody>
-      <tr ng-repeat="talk in discussions">
+      <tr ng-repeat="talk in play.comments">
         <td class="col-md-1">
-          <strong>{{talk.author}}</strong>
+          <strong>{{talk.user._id}}</strong>
         </td>
-        <td>{{talk.message}}</td>
+        <td>{{talk.text}}</td>
       </tr>
       </tbody>
     </table>

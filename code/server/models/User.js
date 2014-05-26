@@ -45,7 +45,13 @@ var schema = new mongoose.Schema({
       profile: { type: type.Mixed }
     }
   },
-  roles: [{ type: String }]
+  roles: [{ type: String }],
+  points: Number,
+  style: String,
+  status: String,
+  totalGames: Number,
+  totalWins: Number,
+  avatarUrl: String
 });
 
 // Restify

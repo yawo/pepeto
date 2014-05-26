@@ -45,7 +45,8 @@ var schema = new Schema({
       user: { type: Schema.Types.ObjectId, ref: 'User' },
       text: String
     }
-  ]
+  ],
+  bet: Number
 });
 
 // Restify
