@@ -94,7 +94,7 @@ ngModule.config( [          '$stateProvider', '$urlRouterProvider',
     },
     resolve:{
       play:['Restangular','$stateParams',function(Restangular,$stateParams){
-        return Restangular.one('Plays', $stateParams.playId).get({populate: players});
+        return Restangular.one('Plays', $stateParams.playId).get({populate: 'players'});
       }]
     }
  });
