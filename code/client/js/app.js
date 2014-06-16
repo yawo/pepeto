@@ -38,6 +38,7 @@ ngModule.config(function ($locationProvider) {
 ngModule.config(function (RestangularProvider) {
   RestangularProvider
     .setBaseUrl('/api/v1')
+    .setRestangularFields({id: "_id"})
     .setResponseExtractor(function (res) {
       return res.result?res.result:res;
     });

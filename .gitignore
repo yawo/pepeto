@@ -13,3 +13,4 @@ code/.tmp/*
 code/.cachebust
 code/.gitignore
 code/client-built/
+*.swp

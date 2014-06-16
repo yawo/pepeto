@@ -5,7 +5,7 @@
         <img class="ng-hide" ng-hide='(currentPlayer === me)' src=" {{play.players[1 - me].avatarUrl}} " width='90px' height='90px'/> 
         <img class="ng-hide" ng-show='(currentPlayer === me)' src=" {{play.players[me].avatarUrl}} " width='90px' height='90px'/> 
         <br/>
-        {{play.players[currentPlayer].name}} (<span class="relief">{{play.players[currentPlayer].points}}</span>)
+        {{play.players[currentPlayer].name.first}} (<span class="relief">{{play.players[currentPlayer].points}}</span>)
         <a href="#"><span title="disable timer" class='glyphicon glyphicon-ban-circle'> </span></a>
         <br/>
         <timer id="play-countdown" interval="1000" countdown="120">
