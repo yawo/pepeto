@@ -46,7 +46,7 @@ var schema = new Schema({
       text: String
     }
   ],
-  bet: Number
+  bet: {type: Number, default: 0}
 });
 
 // Restify
