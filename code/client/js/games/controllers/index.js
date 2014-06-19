@@ -6,6 +6,10 @@
 
 exports = module.exports = function (ngModule) {
   ngModule
+  .controller('GameCtrl', function ($scope, $rootScope, $stateParams,  plays) {
+      $scope.plays = plays;
+      $scope.gameId = $stateParams.gameId;
+    })
     .controller('GameHeaderCtrl', function ($scope, $rootScope, $stateParams, play) {
       var elementPlayCountdown = document.querySelector('#play-countdown');
       $rootScope.play = play;

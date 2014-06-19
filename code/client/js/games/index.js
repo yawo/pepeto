@@ -25,7 +25,7 @@ gameTemplates['puissance4'] = {
   history: rhtml('./puissance4/templates/history.html'),
   info: rhtml('./puissance4/templates/info.html'),
   actions: rhtml('./puissance4/templates/actions.html')
-};  
+};
 
 //Another game
 
@@ -44,12 +44,27 @@ require('./controllers/index')(ngModule);
 ngModule.config( [          '$stateProvider', '$urlRouterProvider',
         function ($stateProvider,   $urlRouterProvider) {
   $stateProvider
-  .state('app.home.game.play',{
-    url:'/plays/{playId}',
+  .state('app.home.game',{
+    url:'games/{gameId}',
+    views:{
+      '@':{
+        controller:'GameCtrl',
+        template: rhtml('./templates/game.html')
+      }
+    },
+    resolve:{
+      plays:['Restangular','$stateParams',function(Restangular,$stateParams){
+        return Restangular.all('Plays').getList({game:$stateParams.gameId, state:'1',select:'_id,state,players' });
+      }],
+     $stateParams:'$stateParams'
+    }
+  })
+  .state('app.home.play',{
+    url:'games/{gameId}/plays/{playId}',
     views:{
       'board': {
         controllerProvider:  function($state){
-          //console.log("$state.params.gameId",$state.params.gameId);
+          console.log('$state.params.gameId',$state.params.gameId);
           return $state.params.gameId+'BoardCtrl';
         },
         templateProvider:  function($state){
@@ -88,9 +103,9 @@ ngModule.config( [          '$stateProvider', '$urlRouterProvider',
         controller: 'GameHeaderCtrl',
         template: rhtml('./templates/gameHeader.html')
       } ,
-      '':{
-        template: ' '
-      } 
+      '@':{
+        template: 'PARENT '
+      }
     },
     resolve:{
       play:['Restangular','$stateParams',function(Restangular,$stateParams){

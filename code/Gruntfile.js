@@ -21,8 +21,6 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   grunt.loadNpmTasks('intern');
-  grunt.loadNpmTasks('grunt-watchify');
-  var watchify = require('watchify');
 
   // Project configuration.
   grunt.initConfig({
@@ -297,7 +295,7 @@ module.exports = function (grunt) {
           //'<%= project.path.client %>/fonts/{,*/}*',
           //'<%= project.path.client %>/img/**/*.{gif,jpg,png}',
           //'<%= project.path.server %>/views/**/*.hbs',
-          //'<%= project.path.static %>/**/*',
+          '<%= project.path.static %>/**/*',
           '<%= project.path.temp %>/*.html',
           '<%= project.path.temp %>/css/{,*/}*.css',
           '<%= project.path.temp %>/js/{,*/}*.js'
@@ -320,7 +318,7 @@ module.exports = function (grunt) {
         files: [
           '<%= jshint.client %>',
           '<%= project.path.client %>/js/**/*.html'
-          //,'!<%= project.path.client %>/js/bower_components/**/*.html'
+          ,'!<%= project.path.client %>/js/bower_components/**/*.html'
         ],
         tasks: ['browserify2:dev']
       }
