@@ -25,8 +25,7 @@ var ngModule = angular.module('app', [
   'app.account',
   'app.admin',
   'app.auth',
-  'app.main',
-  'app.games'
+  'app.main'
 ]);
 
 // Enable HTML5 Mode.
