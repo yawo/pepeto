@@ -18,7 +18,6 @@ require('./admin');
 require('./auth');
 require('./layout');
 require('./main');
-require('./games');
 require('./shared');
 
 // Register app.
