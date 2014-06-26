@@ -1,0 +1,40 @@
+<section ui-view class="home">
+  <div class="container">
+    <article class="content">      
+      <div class="plays">
+        <div class="header1">Choose a <strong>Play</strong></div>
+        <div class="row">
+          <div  ng-repeat="play in plays" class="col-sm-6 col-md-4 repeated-item" tooltip="play info">
+            <div class="thumbnail" >
+              <div class="caption">
+                <h3>Play info</h3> 
+                <p><a ui-sref="app.home.game.play({playId:play._id})" class="btn btn-primary" role="button">Watch/Play</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>   
+  </div>
+</section>
+<div  class="row " id="play">
+  <div class="col-md-3 play-sidebar full-height">
+    <div  ui-view='gameHeader'>
+    </div>
+    <div  ui-view='info' >
+    </div>
+    <div  ui-view='actions' >
+    </div>
+    <div  ui-view='history' >
+    </div>
+  </div>
+  <div class="col-md-6 full-height">
+    <div ui-view='board' >
+    </div>
+  </div>
+  <div class="col-md-3 full-height">
+    <div ui-view='discussions' >
+    </div>
+  </div>
+</div>
