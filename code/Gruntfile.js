@@ -143,7 +143,7 @@ module.exports = function (grunt) {
       server: {
         options: {
           debug: true,
-          livereload: project.server.livereload,
+          //livereload: project.server.livereload,
           port: '<%= process.env.PORT || project.server.port %>',
           server: path.resolve('<%= project.path.server %>')
         }

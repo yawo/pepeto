@@ -45,6 +45,7 @@ function _attachExpressLogger() {
   if (process.env.NODE_ENV === 'development') {
     logLevels.console = 'debug';
   }
+  console.log('host: ',_vcapMongo.hostname, _app.config.db.mongo.host, 'localhost');
 
   server.use(expressWinston.logger({
     transports: [

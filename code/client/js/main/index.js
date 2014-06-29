@@ -71,38 +71,39 @@ ngModule.config(function ($stateProvider) {
   })
   .state('app.home.play',{
     url:'games/{gameId}/plays/{playId}',
+    parent:'app.home',
     views:{
       'board': {
-        controllerProvider:  function($state){
-          console.log('$state.params.gameId',$state.params.gameId);
-          return $state.params.gameId+'BoardCtrl';
+        controllerProvider:  function($stateParams){
+          //console.log('$stateParams.gameId',$stateParams.gameId);
+          return $stateParams.gameId+'BoardCtrl';
         },
-        templateProvider:  function($state){
-          return gameTemplates[$state.params.gameId].board;
+        templateProvider:  function($stateParams){
+          return gameTemplates[$stateParams.gameId].board;
         }
       },
       'history': {
-        controllerProvider:  function($state){
-          return $state.params.gameId+'HistoryCtrl';
+        controllerProvider:  function($stateParams){
+          return $stateParams.gameId+'HistoryCtrl';
         },
-        templateProvider:  function($state){
-          return gameTemplates[$state.params.gameId].history;
+        templateProvider:  function($stateParams){
+          return gameTemplates[$stateParams.gameId].history;
         }
       },
       'info': {
-        controllerProvider:  function($state){
-          return $state.params.gameId+'InfoCtrl';
+        controllerProvider:  function($stateParams){
+          return $stateParams.gameId+'InfoCtrl';
         },
-        templateProvider:  function($state){
-          return gameTemplates[$state.params.gameId].info;
+        templateProvider:  function($stateParams){
+          return gameTemplates[$stateParams.gameId].info;
         }
       },
       'actions': {
-        controllerProvider:  function($state){
-          return $state.params.gameId+'ActionsCtrl';
+        controllerProvider:  function($stateParams){
+          return $stateParams.gameId+'ActionsCtrl';
         },
-        templateProvider:  function($state){
-          return gameTemplates[$state.params.gameId].actions;
+        templateProvider:  function($stateParams){
+          return gameTemplates[$stateParams.gameId].actions;
         }
       },
       'discussions':{
@@ -114,7 +115,7 @@ ngModule.config(function ($stateProvider) {
         template: rhtml('./templates/gameHeader.html')
       } ,
       '':{
-        template: 'PARENT '
+        template: '  '
       }
     },
     resolve:{

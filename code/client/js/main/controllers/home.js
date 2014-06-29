@@ -14,6 +14,12 @@ exports = module.exports = function (ngModule) {
             $state.go('app.home.play',{gameId: gameId, playId: play._id});
           });
       };
+      $rootScope.$on('$stateNotFound',function(){
+        console.log.apply(console,arguments);
+      });
+      $rootScope.$on('$stateChangeError',function(){
+        console.log.apply(console,arguments);
+      });
     })
     ;
 };

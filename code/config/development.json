@@ -31,12 +31,12 @@
     "mongo": {
       "host": "localhost",
       "port": 27017,
-      "username": null,
-      "password": null,
       "db": "ultimate-seed"
     },
     "redis": {
       "host": "localhost",
+      "user":null,
+      "password":null,
       "port": 6379,
       "password": null,
       "namespace": "ultimate-seed"

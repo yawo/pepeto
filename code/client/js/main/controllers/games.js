@@ -13,7 +13,8 @@ exports = module.exports = function (ngModule) {
     .controller('GameHeaderCtrl', function ($scope, $rootScope, $stateParams, play) {
       var elementPlayCountdown = document.querySelector('#play-countdown');
       $rootScope.play = play;
-      console.log($rootScope.play);
+      $rootScope.gameId = $stateParams.gameId;
+      //console.log($rootScope.play);
       if($rootScope.play.state === $scope.config.playStates.CREATED){
         $rootScope.me = 0;
         $rootScope.currentPlayer = $rootScope.me;
@@ -22,7 +23,7 @@ exports = module.exports = function (ngModule) {
       }else{
         $rootScope.me = 1;
         $rootScope.currentPlayer = 1 - $rootScope.me;
-        console.log($rootScope.play);
+        //console.log($rootScope.play);
         $rootScope.play.players.push($rootScope.play.players[0]);
         $rootScope.play.put();
       }
