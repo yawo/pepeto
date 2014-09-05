@@ -206,3 +206,25 @@ to prevent collapsing during animation*/
         -moz-transform:translate3d(100px, 0, 0);
           transform:translate3d(100px, 0, 0);
 }
+
+.waiting-for-opponent-modal{
+  padding:10%;
+  .modal-content{
+    //padding:10px;
+    background-image: url('/img/waiting.gif');
+    .background-size(cover);
+    background-repeat: no-repeat;
+    .msg{
+      text-align:center;
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+      padding: 17%;
+      font-size: large;
+      .border-radius(5px);
+      img{
+        .border-radius(40px);
+        opacity: 0.5;
+      }
+    }
+  }
+}

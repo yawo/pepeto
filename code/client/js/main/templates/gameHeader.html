@@ -8,7 +8,7 @@
         {{play.players[currentPlayer].name.first}} (<span class="relief">{{play.players[currentPlayer].points}}</span>)
         <a href="#"><span title="disable timer" class='glyphicon glyphicon-ban-circle'> </span></a>
         <br/>
-        <timer id="play-countdown" interval="1000" countdown="120">
+        <timer id="play-countdown" autostart="false" interval="1000" countdown="120">
         <div class="progress">
           <div class="progress-bar progress-bar-{{ (countdown<(20*120/100))?'danger':((countdown<(40*120/100))?'warning':'info') }}" 
             role="progressbar" aria-valuenow="{{((countdown*100)/120)}}" 
@@ -21,13 +21,18 @@
       <td class=''>
         <small>Bet on</small>: <span class="big-relief">{{play.bet}}</span>
         <div>
-          <button class='btn-xs btn btn-primary'><span title='Raise bet' class='glyphicon glyphicon-chevron-up'> </span></button>
-          <button ng-click='startPausePlay()' ng-class='startBtnPauseClass[playing]'><span title='Pause' ng-class='startPauseClass[playing]'> </span> </button>
-          <button class='btn-xs btn btn-danger'><span title='Resign' class='glyphicon glyphicon-stop'> </span> </button>
-
+          <button ng-click="requestBetRaise()" class='btn-xs btn btn-primary'>
+            <span title='Raise bet' class='glyphicon glyphicon-chevron-up'> </span>
+          </button>
+          <button ng-click='startPausePlay()' ng-class='startBtnPauseClass[playing]'>
+            <span title='Pause' ng-class='startPauseClass[playing]'> </span> 
+          </button>
+          <button class='btn-xs btn btn-danger'>
+            <span title='Resign' class='glyphicon glyphicon-stop'> </span> 
+          </button>
           <br/>
           <!--small>Total play time </small> <br/-->
-          <span class="relief"><timer interval="1000">{{hours}}:{{minutes}}:{{seconds}} </timer></span>
+          <span class="relief"><timer autostart="false" interval="1000">{{hours}}:{{minutes}}:{{seconds}} </timer></span>
         </div>
       </td>
     </tr>

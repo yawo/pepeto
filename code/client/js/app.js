@@ -20,6 +20,7 @@ var ngModule = angular.module('app', [
   'ui.router',
   'ui.bootstrap',
   'timer',
+  'cgPrompt',
   'app.shared',
   'app.layout',
   'app.account',
@@ -91,7 +92,7 @@ ngModule.run(function ($rootScope, layout) {
 });
 
 // Connect to socket.io server.
-ngModule.run(function () {
+ngModule.run(function ($rootScope) {
   var retryInterval = 5000,
       retryTimer;
 
@@ -102,6 +103,11 @@ ngModule.run(function () {
       'force new connection': true,
       'max reconnection attempts': Infinity,
       'reconnection limit': 10 * 1000
+    });
+
+
+    _.assign($rootScope, {
+      socket: socket
     });
 
     socket.on('connect', function () {

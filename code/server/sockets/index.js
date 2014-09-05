@@ -14,6 +14,7 @@ function _register(socket) {
   });
 
   require('./test').register(socket);
+  require('./plays').register(socket);
   // require('./users').register(socket);
 }
 

@@ -10,7 +10,7 @@ exports = module.exports = function (ngModule) {
       $scope.plays = plays;
       $scope.gameId = $stateParams.gameId;
     })
-    .controller('GameHeaderCtrl', function ($scope, $rootScope, $stateParams, play) {
+    .controller('GameHeaderCtrl', function ($scope, $rootScope,$state, $stateParams, play, prompt, $modal) {
       var elementPlayCountdown = document.querySelector('#play-countdown');
       $rootScope.play = play;
       $rootScope.gameId = $stateParams.gameId;
@@ -18,7 +18,6 @@ exports = module.exports = function (ngModule) {
       if($rootScope.play.state === $scope.config.playStates.CREATED){
         $rootScope.me = 0;
         $rootScope.currentPlayer = $rootScope.me;
-        $rootScope.play.state = $scope.config.playStates.WAITING;
         $rootScope.play.put();
       }else{
         $rootScope.me = 1;
@@ -29,9 +28,9 @@ exports = module.exports = function (ngModule) {
       }
       $scope.startPauseClass    = ['glyphicon glyphicon-play','glyphicon glyphicon-pause'];
       $scope.startBtnPauseClass = ['btn-xs btn btn-primary','btn-xs btn btn-warning'];
-      $scope.timerRunning = true;
+      $scope.timerRunning = false;
       //$scope.bet = 1000;
-      $rootScope.playing = 1;
+      $rootScope.playing = 0;
 
       $scope.startTimer = function (){
         $scope.$broadcast('timer-start');
@@ -57,14 +56,87 @@ exports = module.exports = function (ngModule) {
         $scope.$apply();
       });
 
+      var waitingForOpponentModal;
       $scope.startPausePlay = function(){
-        $rootScope.playing = 1 - $rootScope.playing;
-        if($rootScope.playing){
-          elementPlayCountdown.start();
-        }else{
-          elementPlayCountdown.stop();
+        switch($rootScope.play.state){ 
+          case $scope.config.playStates.CREATED :
+            //On a new game
+            $rootScope.play.state = $scope.config.playStates.WAITING;
+            $rootScope.play.put();
+            waitingForOpponentModal = $modal.open({
+              template: ' <div class="msg">Please wait for an opponent to join ...<br/>'+
+                        '   <img src="/img/spinner.gif"> <br/>'+
+                        '   <button class="btn btn-warning" ng-click="cancel()">Abort</button>'+
+                        ' </div>',
+              keyboard: false,
+              backdrop: false,                      
+              windowClass: 'waiting-for-opponent-modal',
+              controller: function ($scope, $modalInstance) {
+                $scope.ok = function () {
+                  $modalInstance.close('close');
+                  console.log('modal closed');
+                };
+
+                $scope.cancel = function () {
+                  $modalInstance.dismiss('cancel');
+                  console.log('modal cancelled');
+                  $rootScope.play.remove();
+                  $state.go('app.home');
+                };
+              }
+            });
+            break;
+          case $scope.config.playStates.PLAYING :
+          case $scope.config.playStates.PAUSED :
+            //on a running game
+            $rootScope.playing = 1 - $rootScope.playing;
+            if($rootScope.playing){
+              elementplaycountdown.start();
+            }else{
+              elementPlayCountdown.stop();
+            }
+            break;
+          default:
+            //Other states
+            break;
         }
       };
+
+      $scope.raiseBet = function(){
+        if($rootScope.play.bet === 0){
+            $rootScope.play.bet = 25; 
+        }else{
+            $rootScope.play.bet *= 2; 
+        }
+        $rootScope.play.put();
+      };
+
+      $scope.$on('bet-raise-request', function(event, data){
+        prompt({
+          title: 'Raising the Bet',
+          message: 'Double the current bet ?'
+        }).then(function(){
+          $scope.raiseBet();
+        });
+      });
+
+
+      $scope.socket.emit("join-play-room",$rootScope.play._id);
+      $scope.socket.on("bet-raise-request",function(data){
+        console.log("bet-raise-request event",data);
+      });
+
+      $scope.requestBetRaise = function(){
+        if($rootScope.play.state === $scope.config.playStates.CREATED){
+          $scope.$emit('bet-raise-request');
+          console.log("socket = ",$scope.socket);
+          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
+        }else{
+          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
+        }
+      };
+
+      
     })
   .controller('DiscussionsCtrl', function ($scope, $rootScope, play) {
       var elementDiscussion =  document.querySelector('#discussions .dtable');
