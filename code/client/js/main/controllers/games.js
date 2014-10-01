@@ -10,11 +10,19 @@ exports = module.exports = function (ngModule) {
       $scope.plays = plays;
       $scope.gameId = $stateParams.gameId;
     })
-    .controller('GameHeaderCtrl', function ($scope, $rootScope,$state, $stateParams, play, prompt, $modal) {
+  //console.log($rootScope.play);
+  .controller('GameHeaderCtrl', function ($scope, $rootScope,$state, $stateParams, play, prompt, $modal) {
       var elementPlayCountdown = document.querySelector('#play-countdown');
+      var waitingForOpponentModal;
+      //// Initialize
+      $scope.startPauseClass    = ['glyphicon glyphicon-play','glyphicon glyphicon-pause'];
+      $scope.startBtnPauseClass = ['btn-xs btn btn-primary','btn-xs btn btn-warning'];
+      $rootScope.playing = 0;
+      $scope.timerRunning = false;
+
       $rootScope.play = play;
       $rootScope.gameId = $stateParams.gameId;
-      //console.log($rootScope.play);
+
       if($rootScope.play.state === $scope.config.playStates.CREATED){
         $rootScope.me = 0;
         $rootScope.currentPlayer = $rootScope.me;
@@ -22,54 +30,35 @@ exports = module.exports = function (ngModule) {
       }else{
         $rootScope.me = 1;
         $rootScope.currentPlayer = 1 - $rootScope.me;
-        //console.log($rootScope.play);
         $rootScope.play.players.push($rootScope.play.players[0]);
         $rootScope.play.put();
       }
-      $scope.startPauseClass    = ['glyphicon glyphicon-play','glyphicon glyphicon-pause'];
-      $scope.startBtnPauseClass = ['btn-xs btn btn-primary','btn-xs btn btn-warning'];
-      $scope.timerRunning = false;
-      //$scope.bet = 1000;
-      $rootScope.playing = 0;
 
-      $scope.startTimer = function (){
-        $scope.$broadcast('timer-start');
-        $scope.timerRunning = true;
-      };
+      //// Actions
 
-      $scope.stopTimer = function (){
-        $scope.$broadcast('timer-stop');
-        $scope.timerRunning = false;
-      };
-
-      $scope.$on('timer-stopped', function (event, data){
-        //console.log('Timer Stopped - event/data = ', event, data);
-        //console.log('event.targetScope.countdown',event.currentScope);
-        if(event.targetScope.countdown === 0){
-          $scope.$emit('next-player');
+      $scope.requestBetRaise = function(){
+        if($rootScope.play.state === $scope.config.playStates.CREATED){
+          $scope.$emit('bet-raise-request');
+          console.log("socket = ",$scope.socket);
+          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
+        }else{
+          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
         }
-      });
+      };
 
-      $scope.$on('next-player', function (event, data){
-        $rootScope.currentPlayer = 1- $rootScope.currentPlayer;
-        elementPlayCountdown.start();
-        $scope.$apply();
-      });
-
-      var waitingForOpponentModal;
       $scope.startPausePlay = function(){
-        switch($rootScope.play.state){ 
+        switch($rootScope.play.state){
           case $scope.config.playStates.CREATED :
             //On a new game
             $rootScope.play.state = $scope.config.playStates.WAITING;
             $rootScope.play.put();
             waitingForOpponentModal = $modal.open({
               template: ' <div class="msg">Please wait for an opponent to join ...<br/>'+
-                        '   <img src="/img/spinner.gif"> <br/>'+
-                        '   <button class="btn btn-warning" ng-click="cancel()">Abort</button>'+
-                        ' </div>',
+                '   <img src="/img/spinner.gif"> <br/>'+
+                '   <button class="btn btn-warning" ng-click="cancel()">Abort</button>'+
+                ' </div>',
               keyboard: false,
-              backdrop: false,                      
+              backdrop: false,
               windowClass: 'waiting-for-opponent-modal',
               controller: function ($scope, $modalInstance) {
                 $scope.ok = function () {
@@ -104,12 +93,45 @@ exports = module.exports = function (ngModule) {
 
       $scope.raiseBet = function(){
         if($rootScope.play.bet === 0){
-            $rootScope.play.bet = 25; 
+          $rootScope.play.bet = 25;
         }else{
-            $rootScope.play.bet *= 2; 
+          $rootScope.play.bet *= 2;
         }
         $rootScope.play.put();
       };
+
+      $scope.startTimer = function (){
+        $scope.$broadcast('timer-start');
+        $scope.timerRunning = true;
+      };
+
+
+      $scope.stopTimer = function (){
+        $scope.$broadcast('timer-stop');
+        $scope.timerRunning = false;
+      };
+
+      //// Socket.io Events
+      $scope.socket.emit("join-play-room",$rootScope.play._id);
+
+      $scope.socket.on("bet-raise-request",function(data){
+        console.log("bet-raise-request event",data);
+      });
+
+      //// Angular Events
+      $scope.$on('timer-stopped', function (event, data){
+        //console.log('Timer Stopped - event/data = ', event, data);
+        //console.log('event.targetScope.countdown',event.currentScope);
+        if(event.targetScope.countdown === 0){
+          $scope.$emit('next-player');
+        }
+      });
+
+      $scope.$on('next-player', function (event, data){
+        $rootScope.currentPlayer = 1- $rootScope.currentPlayer;
+        elementPlayCountdown.start();
+        $scope.$apply();
+      });
 
       $scope.$on('bet-raise-request', function(event, data){
         prompt({
@@ -119,24 +141,6 @@ exports = module.exports = function (ngModule) {
           $scope.raiseBet();
         });
       });
-
-
-      $scope.socket.emit("join-play-room",$rootScope.play._id);
-      $scope.socket.on("bet-raise-request",function(data){
-        console.log("bet-raise-request event",data);
-      });
-
-      $scope.requestBetRaise = function(){
-        if($rootScope.play.state === $scope.config.playStates.CREATED){
-          $scope.$emit('bet-raise-request');
-          console.log("socket = ",$scope.socket);
-          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
-        }else{
-          $scope.socket.emit("bet-raise-request",$rootScope.play._id,$rootScope.play.bet);
-        }
-      };
-
-      
     })
   .controller('DiscussionsCtrl', function ($scope, $rootScope, play) {
       var elementDiscussion =  document.querySelector('#discussions .dtable');
